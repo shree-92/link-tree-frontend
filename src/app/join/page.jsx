@@ -35,7 +35,7 @@ import { useRouter } from "next/navigation";
 import { setLazyProp } from "next/dist/server/api-utils";
 
 const JoinPage = () => {
-  const router = useRouter();
+  //const router = useRouter();
 
   // states for register variables
   const [email, setEmail] = useState("");
@@ -104,7 +104,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        router.push("/my-profile");
+        //router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
@@ -160,7 +160,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        router.push("/my-profile");
+        //router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
