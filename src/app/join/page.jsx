@@ -35,7 +35,7 @@ import { useRouter } from "next/navigation";
 import { setLazyProp } from "next/dist/server/api-utils";
 
 const JoinPage = () => {
-  //const router = useRouter();
+  const router = useRouter();
 
   // states for register variables
   const [email, setEmail] = useState("");
@@ -79,18 +79,17 @@ const JoinPage = () => {
       const response = await fetch(
         "https://link-tree-backend-wuop.onrender.com/api/v1/user/register",
         {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username,
-                email,
-                password,
-            }),
-            credentials: "include", // Ensure credentials are included
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            email,
+            password,
+          }),
         }
-    );
+      );
 
       const data = await response.json();
 
@@ -104,7 +103,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        //router.push("/my-profile");
+        router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
@@ -139,15 +138,15 @@ const JoinPage = () => {
       const response = await fetch(
         "https://link-tree-backend-wuop.onrender.com/api/v1/user/login",
         {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include", // Ensure credentials are included
-            body: JSON.stringify({
-                email: logEmail,
-                password: logPassword,
-            }),
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          credentials: "include",
+          body: JSON.stringify({
+            email : logEmail,
+            password: logPassword,
+          }),
         }
-    );
+      );
 
       const data = await response.json();
 
@@ -160,7 +159,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        //router.push("/my-profile");
+        router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
