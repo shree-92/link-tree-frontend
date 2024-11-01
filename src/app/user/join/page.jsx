@@ -32,7 +32,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useUrlStore } from "@/zustandStore/user.url";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { setLazyProp } from "next/dist/server/api-utils";
 
 const JoinPage = () => {
   const router = useRouter();
@@ -270,7 +269,7 @@ const JoinPage = () => {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="outline">Cancel</Button>
-                <Button onClick={handleLogin}>Register</Button>
+                <Button onClick={handleLogin}>Login</Button>
               </CardFooter>
             </Card>
           </TabsContent>
