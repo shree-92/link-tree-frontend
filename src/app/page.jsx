@@ -1,7 +1,7 @@
 
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div className="h-screen w-full flex justify-center items-center"> i dont wanna anymore </div>
   )
 }
 
