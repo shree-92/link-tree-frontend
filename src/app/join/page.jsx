@@ -103,7 +103,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        router.push("/my-profile");
+        //router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
@@ -159,7 +159,7 @@ const JoinPage = () => {
         setEmail("");
         setPassword(""); // making states empty
         toast.success(data.message);
-        router.push("/my-profile");
+        //router.push("/my-profile");
       }
     } catch (error) {
       toast.error(error);
